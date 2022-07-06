@@ -31,6 +31,11 @@ RUN chmod u+x /systemlibs.sh && /systemlibs.sh
 RUN chmod u+x /bootstrap.sh && /bootstrap.sh
 RUN chmod u+x /generate_key.sh && /generate_key.sh
 
+RUN yum -y update && \
+    yum -y install wget && \
+    yum install -y tar.x86_64 && \
+    yum clean all
+
 # Post bootstrap to avoid expensive docker rebuilds
 COPY script/entrypoint.sh /entrypoint.sh
 COPY config/airflow.cfg ${AIRFLOW_USER_HOME}/airflow.cfg
