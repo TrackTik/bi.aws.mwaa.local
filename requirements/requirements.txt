@@ -1,4 +1,20 @@
 --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.4.3/constraints-3.10.txt"
 
-apache-airflow-providers-snowflake==3.3.0
-apache-airflow-providers-mysql==3.2.1
+ofxtools
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+ratelimiter
+ratelimit
+jira
+XlsxWriter
+openpyxl
+newrelic-api
+requests-futures
+tableauserverclient
+dayforce-client
+hubspot-api-client
+grnhse-api
+dbt-core
+dbt-extractor
+dbt-snowflake
