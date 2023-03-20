@@ -6,6 +6,7 @@ services:
         environment:
             - LOAD_EX=n
             - EXECUTOR=Sequential
+            - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
         logging:
             options:
                 max-size: 10m
@@ -13,7 +14,6 @@ services:
         volumes:
             - "${PWD}/../bi.airflow/dags:/usr/local/airflow/dags"
             - "${PWD}/../bi.airflow/plugins:/usr/local/airflow/plugins"
-            - "${PWD}/requirements:/usr/local/airflow/requirements"
         ports:
             - "8080:8080"
         command: webserver
